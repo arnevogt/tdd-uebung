@@ -9,16 +9,16 @@ import java.io.File;
  */
 public class Product {
     
-    private final String nmae;
+    private final String name;
     private final File productFile;
 
     public Product(String nmae, File productFile) {
-        this.nmae = nmae;
+        this.name = nmae;
         this.productFile = productFile;
     }
 
-    public String getNmae() {
-        return nmae;
+    public String getName() {
+        return name;
     }
 
     public File getProductFile() {

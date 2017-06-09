@@ -31,11 +31,12 @@ public class OrderManagerTest {
         List<Order> queuedOrders = om.getQueuedOrders();
         
         Assert.assertThat(queuedOrders.size(), CoreMatchers.is(2));
+        Assert.assertThat(queuedOrders.contains(o), CoreMatchers.is(true));
+        Assert.assertThat(queuedOrders.contains(o2), CoreMatchers.is(true));
         
         om.processOrders();
         
         Assert.assertThat(queuedOrders.size(), CoreMatchers.is(0));
-        
         
         List<Product> deliveredProducts = service.getDeliveredProducts();
         Assert.assertThat(o2.getProduct(), CoreMatchers.equalTo(deliveredProducts.get(0)));
@@ -47,7 +48,7 @@ public class OrderManagerTest {
 
         @Override
         public void deliver(Product p, Customer c) {
-            Logger.getLogger(SubService.class.getName()).log(Level.INFO, "delivered product {0}", p.getName());
+            Logger.getLogger(SubService.class.getName()).log(Level.INFO, "delivered product {0} to {1} {2}", new String[] {p.getName(), c.getFirstName(), c.getLastName()});
             super.deliver(p, c); //To change body of generated methods, choose Tools | Templates.
             this.deliveredProducts.add(p);
         }

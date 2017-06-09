@@ -49,7 +49,7 @@ public class OrderManagerTest {
         @Override
         public void deliver(Product p, Customer c) {
             Logger.getLogger(SubService.class.getName()).log(Level.INFO, "delivered product {0} to {1} {2}", new String[] {p.getName(), c.getFirstName(), c.getLastName()});
-            super.deliver(p, c); //To change body of generated methods, choose Tools | Templates.
+            super.deliver(p, c);
             this.deliveredProducts.add(p);
         }
         

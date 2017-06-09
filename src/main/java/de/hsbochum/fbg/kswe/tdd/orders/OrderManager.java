@@ -30,9 +30,10 @@ public class OrderManager {
     public void processOrders(){
         queuedOrders.sort(new PriorityComparator());
         
-        for(Order o : queuedOrders){
+        queuedOrders.forEach((o) -> {
             this.delivery.deliver(o.getProduct(), o.getCustomer());
-        }
+        });
+        
         this.queuedOrders.clear();
     }
     

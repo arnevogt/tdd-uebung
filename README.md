@@ -10,7 +10,7 @@ Gehe nach dem TDD-Verfahren vor und realisiere die entsprechende Logik, die im
 Test definiert ist. Es müssen die Klassen `TimeSeries` und
 `Observation` sowie deren Logik erstellt werden.
 
-## Teil 1: Erweiterung des TimeSeriesTest mit Maßeinheiten
+## Teil 2: Erweiterung des TimeSeriesTest mit Maßeinheiten
 
 Erweitere den  Unit-Test `TimeSeriesTest` so, dass die Klassen `TimeSeries` und
 `Observation` wie folgt erweitert werden:
